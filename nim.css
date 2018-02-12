@@ -1,0 +1,31 @@
+body, html{
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	font-family:'Roboto', sans-serif;
+}
+
+ul{
+	margin: 50px auto;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul li{
+	margin: 0px auto;
+}
+
+.button{
+	width: 160px;
+	font-size: 18px;
+	background-color: #008CBA;
+	border-width: 2px;
+	color: white;
+	padding: 4px 30px;
+	text-decoration: none;
+}
+
+.header{
+	margin-top: 50px;
+	font-size: 24px;
+}
