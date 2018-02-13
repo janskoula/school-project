@@ -26,6 +26,25 @@ ul li{
 }
 
 .header{
+	color: white;
 	margin-top: 50px;
 	font-size: 24px;
+}
+
+#pravidla{
+	background-color: #008CBA;
+	width: 600px;
+	margin: 40px auto;
+	padding: 15px;
+	color: white;
+	border-width: 2px;
+}
+
+.main{
+	margin: 50px auto;
+	padding: 30px;
+	width: 1000px;
+	height: 500px;
+	border-radius: 50px;
+	background-color: #555555;
 }

@@ -6,11 +6,18 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="header">HRA NIM</div>
-		<ul>
-			<li><button class="button">Nová hra</button></li></button>
-			<li><button class="button">Obtížnost</button></li>
-			<li><button class="button">Pravidla</button></li>
-		</ul>
+		<div class="main">
+			<div class="header">HRA NIM</div>
+			<ul>
+				<li><button class="button">Nová hra</button></li></button>
+				<li><button onclick="this.innerHTML= obtiznostHry();" class="button">Obtížnost: lehká</button></li>
+				<li><button onclick="pravidla();" class="button">Pravidla</button></li>
+			</ul>
+			
+			<div id="pravidla">
+				PRAVIDLA HRY NIM:<br> CÍL HRY:<br>	-odebrat poslední sirku<br> HRA:<br>-když jsi na tahu můžeš odebrat 1-3 sirky<br> KONEC HRY:<br>-ten kdo sebere poslední sirku vyhrál
+			</div>
+		</div>
+		<script src="nim.js"></script>
 	</body>
 </html>
