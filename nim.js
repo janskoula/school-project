@@ -19,3 +19,17 @@ function pravidla(){
 		x.style.display = "none";
 	}
 }
+
+function novaHra(){
+	var x = document.getElementById("main");
+	x.style.display = "none";
+	var y = document.getElementById("game");
+	y.style.display = "block";
+	document.getElementById("obtiznost").innerHTML = "Obtížnost: " + obtiznosti[obtiznost];	
+}
+
+function menu(){
+	var x = document.getElementById("main");
+	x.style.display = "block";
+	document.getElementById("game").style.display = "none";
+}
