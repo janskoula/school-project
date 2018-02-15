@@ -13,21 +13,26 @@
 				<div id="obtiznost"></div>
 				<div class="header">HRA NIM</div>
 				<div class="wipe"></div>
-				<table class="odebrat">
+				<table class="odebrat" id="tabulka">
 					<tr>
 						<td width="150"></td>
-						<td><img src="arrow_up.svg"></td>
+						<td type="button" onclick="zvysit();"><img src="arrow_up.svg"></td>
 					</tr
 					<tr>
 						<td width="150">ODEBRAT</td>
-						<td>0</td>
+						<td id="odebrat"></td>
 					</tr>
 					<tr>
 						<td width="150"></td>
-						<td><img src="arrow_down.svg"</td>
+						<td type="button" onclick="snizit();"><img src="arrow_down.svg"</td>
 					</tr>
 				</table>
 				<div id="counter">SIREK CELKEM:</div>
+				<div class="wipe"></div>
+				<div id="hromada"></div>
+				<button onclick="konecTahu();" id="konectahu">UKONČIT TAH</button>
+				<div id="tahpocitace">HRAJE POČÍTAČ</div>
+				<div id="odebrane_sirky"></div>
 			</div>
 			
 			<div id="main">
@@ -39,7 +44,7 @@
 				</ul>
 				
 				<div id="pravidla">
-					PRAVIDLA HRY NIM:<br> CÍL HRY:<br>	-odebrat poslední sirku<br> HRA:<br>-když jsi na tahu můžeš odebrat 1-3 sirky<br> KONEC HRY:<br>-ten kdo sebere poslední sirku vyhrál
+					PRAVIDLA HRY NIM:<br> HRA:<br>-když jsi na tahu můžeš odebrat 1-3 sirky<br>-po ukončení tahu odebírá sirky protivník<br> KONEC HRY:<br>-ten kdo sebere poslední sirku vyhrál
 				</div>
 			</div>
 		

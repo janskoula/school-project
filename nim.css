@@ -93,3 +93,38 @@ ul li{
 .wipe{
 	clear: both;
 }
+
+#hromada{
+	text-align: center;
+	font-size: 35px;
+	width: 1000px;
+	height: 140px;
+	margin: 20px auto;
+}
+
+.sirka{
+	float: left;
+	margin: 10px;
+}
+
+#konectahu{
+	color: white;
+	margin: 40px auto;
+	font-size: 25px;
+	background-color: #008CBA;
+}
+
+#tahpocitace{
+	width: 160px;
+	padding: 4px 30px;
+	color: white;
+	margin: 40px auto;
+	font-size: 25px;
+	background-color: #008CBA;
+	display: none;
+}
+
+#odebrane_sirky{
+	font-size: 16px;
+	text-align: center;
+}
