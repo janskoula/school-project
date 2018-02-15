@@ -1,9 +1,10 @@
-
+// NASTAVENI PROMENYCH
 var obtiznosti  = ["lehká", "střední", "těžká"];
 var obtiznost=0;
 var odebrat=0;
 var sirky = {};
 
+// nastaveni buttonu na prepinani obtiznosti
 function obtiznostHry(){
 	obtiznost += 1;
 	if (obtiznost > 2){
@@ -21,54 +22,57 @@ function pravidla(){
 		x.style.display = "none";
 	}
 }
+
+// button Nova hra
 function novaHra(){
 	odebrat=0;
-	sirky.pocet = Math.floor(Math.random()* 16) + 15;
-	var x = document.getElementById("main");
-	var y = document.getElementById("game");
-	var hromada = [];
-	x.style.display = "none";
-	y.style.display = "block";
-	document.getElementById("odebrat").innerHTML = odebrat;
-	document.getElementById("obtiznost").innerHTML = "Obtížnost: " + obtiznosti[obtiznost];
-	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet;
-	document.getElementById("konectahu").style.display = "block";
-	document.getElementById("odebrane_sirky").style.display = "none";
+	
+	sirky.pocet = Math.floor(Math.random()* 16) + 15;  // nastave
+	var hromada = []; // list se sirkama
+	document.getElementById("main").style.display = "none"; 	// vypnuti viditelnosti menu
+	document.getElementById("game").style.display = "block";	 // zapnuti viditelnosti samotne hry
+	document.getElementById("odebrat").innerHTML = odebrat; 	// vypsani cisla sirek ktere se odeberou
+	document.getElementById("obtiznost").innerHTML = "Obtížnost: " + obtiznosti[obtiznost]; 	// vypsani na jakou obtiznost je hra spustena
+	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet; 	// vypsani celkoveho poctu sirek
+	document.getElementById("konectahu").style.display = "block"; 	// zapnuta viditelnost buttonu pro ukonceni tahu
+	document.getElementById("odebrane_sirky").style.display = "none"; 	// vypnuta viditelnost zpravy o odebranych sirkach pocitacem (kvuli odchodu do menu)
 	
 	// ZACATEK HRY
-	for (i = 0; i < sirky.pocet; i++){
+	for (i = 0; i < sirky.pocet; i++){  // pridani sirek(obrazku) do promene "hromada"
 		hromada += "<img src='sirka.svg' class='sirka'>";
 	}
-	document.getElementById("hromada").innerHTML = hromada;
+	document.getElementById("hromada").innerHTML = hromada; // zobrazeni vsech sirek ve hre
 }
-
+// KONEC TAHU
 function konecTahu(){
 	
-	if (odebrat == 0){
-		return;
-	}
-	sirky.pocet -= odebrat;
-	hromada = "";
-	for (i = 0; i < sirky.pocet; i++){
+	sirky.pocet -= odebrat; // odebrani sirek hracem
+	hromada = ""; // nulovani listu se sirkami
+	for (i = 0; i < sirky.pocet; i++){  // znovu naplneni hromady bez odectenych sirek
 		hromada += "<img src='sirka.svg' class='sirka'>";
 	}
-	document.getElementById("hromada").innerHTML = hromada;
-	if (sirky.pocet <= 0){
-		document.getElementById("hromada").innerHTML = "VYHRÁL/A JSTE";
-		document.getElementById("konectahu").style.display = "none";
-		sirky.pocet = 0;
-		document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet;
-		document.getElementById("odebrat").innerHTML = odebrat;
-		return;
+	document.getElementById("hromada").innerHTML = hromada; // znovu vsech zbyvajicich sirek
+	
+	// KONTROLA JESTLI HRAC NEVYHRAL
+	if (sirky.pocet <= 0){  	// pokud je sirek mensi nebo roven 0 tak:
+		document.getElementById("hromada").innerHTML = "VYHRÁL/A JSTE"; 	// zobrazeni napisu s vytezstvim
+		document.getElementById("konectahu").style.display = "none"; 	// vypnuta viditelnost buttonu s koncem tahu
+		sirky.pocet = 0; 	// nastaveni poctu sirek na 0 (aby se neslo do minusu)
+		document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet; 	// vypsani celkoveho poctu sirek (tedy 0)
+		document.getElementById("odebrat").innerHTML = odebrat; 
+		return; 	// konec funkce/hry
 	}
-	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet;
-	document.getElementById("odebrat").innerHTML = odebrat;
-	document.getElementById("konectahu").style.display = "none";
-	document.getElementById("tahpocitace").style.display = "block";
+	
+	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet; 	// vypsani zbyvajicich sirek
+	document.getElementById("odebrat").innerHTML = odebrat; 	// prepsani poctu sirek ktere se odeberou
+	document.getElementById("konectahu").style.display = "none";	 // vypnuti viditelnosti buttonu na ukonceni tahu
+	document.getElementById("tahpocitace").style.display = "block"; 	// zapnuti viditelnosti bloku oznamujici tah pocitace
 	
 	// TAH POCITACE - s prestavkou 2 sekund
 	setTimeout(tahPocitace, 2000);
 }
+
+// FUNKCE PRO TAH POCITACE
 function tahPocitace(){
 	// LEHKA OBTIZNOST
 	if (obtiznost == 0){
@@ -109,7 +113,7 @@ function tahPocitace(){
 	// ZBYTEK AKCI (PREPISOVANI OKNA)
 	sirky.pocet -= odebrat; 
 	hromada = "";
-	for (i = 0; i < sirky.pocet; i++){	// pridavani sirek do hromady
+	for (i = 0; i < sirky.pocet; i++){		// pridavani sirek do hromady
 		hromada += "<img src='sirka.svg' class='sirka'>";
 	}
 	// ZPRAVA KOLIK POCITAC ODEBRAL SIREK
@@ -119,10 +123,7 @@ function tahPocitace(){
 	else{
 		document.getElementById("odebrane_sirky").innerHTML = "Počítač odebral " + odebrat + " sirky.";
 	}
-	document.getElementById("odebrane_sirky").style.display = "block";
-	odebrat = 0;
-	document.getElementById("hromada").innerHTML = hromada; // vzskladani hromady do okna
-	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet; // prepsani celkoveho poctu sirek
+	
 	// KONTROLA JESTLI HRAC NEPROHRAL
 	if (sirky.pocet <= 0){
 		document.getElementById("hromada").innerHTML = "PROHRÁL/A JSTE";
@@ -130,18 +131,24 @@ function tahPocitace(){
 		document.getElementById("tahpocitace").style.display = "none";
 		return;
 	}
+
+	document.getElementById("odebrane_sirky").style.display = "block"; 	// zobrazeni zpravy o poctu odebranych sirek pocitacem
+	odebrat = 0;
+	document.getElementById("hromada").innerHTML = hromada; 	// vzskladani hromady do okna
+	document.getElementById("counter").innerHTML = "SIREK CELKEM: " + sirky.pocet; 	// prepsani celkoveho poctu sirek
+	document.getElementById("konectahu").style.display = "block"; 	// objeveni buttonu "konectahu"
+	document.getElementById("tahpocitace").style.display = "none"; 	// schovani divu "tahpocitace"
+	document.getElementById("odebrat").innerHTML = odebrat; 	// prepsani cisla na 0 
 	
-	document.getElementById("konectahu").style.display = "block"; // objeveni buttonu "konectahu"
-	document.getElementById("tahpocitace").style.display = "none"; // schovani divu "tahpocitace"
-	document.getElementById("odebrat").innerHTML = odebrat; // prepsani cisla na 0 
-	
-}
-function menu(){
-	var x = document.getElementById("main");
-	x.style.display = "block";
-	document.getElementById("game").style.display = "none";
 }
 
+// BUTTON MENU
+function menu(){
+	var x = document.getElementById("main");
+	x.style.display = "block"; 	// zapnuti viditelnosti menu
+	document.getElementById("game").style.display = "none"; 	// vypnuti viditelnosti hry
+}
+// button pro zvyseni poctu sirek, ktere se odeberou
 function zvysit(){
 	odebrat += 1;
 	if (odebrat > 3){
@@ -149,7 +156,7 @@ function zvysit(){
 	}
 	document.getElementById("odebrat").innerHTML = odebrat;
 }
-
+// button pro snizeni poctu sirek, ktere se odeberou
 function snizit(){
 	odebrat -= 1;
 	if (odebrat < 0){
