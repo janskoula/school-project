@@ -8,6 +8,10 @@
 	background-color: #f9f9f9;
 }
 
+a{
+	text-decoration: none;
+}
+
 .topbar{
 	list-style-type: none;
 	margin: 0 auto;
@@ -19,6 +23,15 @@
 	z-index: 1;
 	box-shadow: 0 8px 6px -5px rgba(68, 68, 68, 0.5);
 }
+
+.jazyky{
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	position: static;
+	box-shadow: 0 8px 6px -5px rgba(68, 68, 68, 0.5);
+}
+
 footer{
 	max-width: 1920px;
 	bottom: 0px;
@@ -28,7 +41,7 @@ footer{
 	background-color: #555555;
 	margin: 0 auto;
 	padding: 3px 0px;
-	font-size: 10px;
+	font-size: 12px;
 	width: 100%;
 	overflow: hidden;
 }
@@ -43,10 +56,12 @@ a.tpbar{
 ul li a{
 	color: white;
 	text-decoration: none;
+	background-color: #555555;
 }
-ul li a:hover {
+a:hover {
 	background-color: #333;
 }
+
 .hsidebar{
 	width: 224px;
 	margin: 0;
@@ -74,16 +89,29 @@ a.sdbar{
 }
 
 .main{
+	padding: 20px;
 	margin: 40px auto;
 	margin-bottom: 60px;
-	padding: 0;
 	position: static;
 	top: 100px;
 	width: 850px;
 	min-height: 500px;
-	background-color: white;
 	border-radius: 40px;
+	background-color: white;
 	box-shadow: 2px 2px 5px #333;
+	overflow: auto;
+}
+
+.main-kod{
+	padding: 20px;
+	margin: 0px auto;
+	position: static;
+	top: 100px;
+	width: 850px;
+	max-height: 800px;
+	background-color: white;
+	box-shadow: 2px 2px 5px #333;
+	overflow: auto;
 }
 .aktivni {
 	background-color: #3882a0;
@@ -100,5 +128,25 @@ a.sdbar{
 	width: 850px;
 	padding: 25px;
 	margin: 0px auto;
-	background: green;
+	background: #555;
+}
+
+.kod{
+	text-decoration: none;
+	color: white;
+}
+
+.popis{
+	font-size: 14px;
+}
+
+.vyzkouset{
+	text-align: center;
+	color: white;
+	margin: 10px auto;
+	margin-bottom: 60px;
+	padding: 8px;
+	width: 110px;
+	background-color:#3882a0;
+	font-size: 18px;
 }
