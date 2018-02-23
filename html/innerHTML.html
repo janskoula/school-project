@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href= "../css/style.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>kod hry Nim</title>
+	</head>
+	
+	<body>
+		<div id="container">
+			<ul class="topbar" style="margin-bottom: 60px;">
+				<li><a href="index.html" class="tpbar" style="">Domů</a></li>
+				<li><a href="zapisky.html" class="tpbar">Zápisky</a></li>
+				<li><a href="kody.html" class="tpbar aktivni">Kódy</a></li>
+				<li><a href="#" class="tpbar">Kontakt</a></li>
+				<li><a href="#" class="tpbar">Zdroje</a></li>
+			</ul>
+			<div class="wipe"></div>
+			
+			
+			<div id="body">
+					<a href="kody.html" class="backarrow">
+						<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" class="arrow">
+							<!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+							<g>
+								<title></title>
+								<rect fill="none" id="canvas_background" height="50" width="50" y="-1" x="-1"/>
+								<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+									<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+								</g>
+							</g>
+							<g>
+								<title></title>
+								<ellipse fill-opacity="0" ry="22" rx="22" id="svg_4" cy="23.937501" cx="24.187498" stroke-width="3.5" fill="#0fffff"/>
+								<path id="svg_7" d="m21.633765,16.338203l0,-2.588203l-13.883765,8.016542l13.883765,8.016613l0,-2.777187c3.767436,-0.001762 10.381436,0.320219 10.381436,2.602199c0,3.188456 -6.907544,4.889403 -6.907544,4.889403l0,2.444674c0,0 15.516917,0.530219 15.516917,-11.266268c0,-9.267795 -13.289658,-9.616054 -18.990809,-9.337773z" stroke-width="1.5"/>
+								<rect id="svg_10" height="11.56235" width="4.62494" y="13.281389" x="-16.530725" stroke-opacity="null" stroke-width="3.5" stroke="#000" fill="#0fffff"/>
+							</g>
+					   </svg>
+					</a>
+				<div class="main-window">
+					<div class="header">innerHTML</div>
+					<div style="width: 850px; margin: 0px auto;">
+						<ul class="jazyky">
+							<li><a href="#js" onclick="getJS();" id="js" class="tpbar" onmouseover="bgon(this);" onmouseout="bgoff(this);">JS</a></li>
+							<li><a href="#html" onclick="getHTML();" id="html" class="tpbar" onmouseover="bgon(this);" onmouseout="bgoff(this);">HTML</a></li>
+						</ul>
+						<div class="main-kod" id="main-kod"></div>
+						<div class="vyzdiv"><a href="pokus-innerHTML.html" target="_blank" class="vyzkouset">Vyzkoušet</a></div>
+					</div>
+				</div>
+			</div>
+			<footer>&copy; 2018 | Jan Škoula</footer>
+		</div>
+		<script src="../js/innerHTML.js"></script>
+	</body>
+</html>

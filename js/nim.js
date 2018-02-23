@@ -1,4 +1,4 @@
-// NASTAVENI PROMENYCH
+﻿// NASTAVENI PROMENYCH
 var obtiznosti  = ["lehká", "střední", "těžká"];
 var obtiznost=0;
 var odebrat=0;
@@ -27,7 +27,7 @@ function pravidla(){
 function novaHra(){
 	odebrat=0;
 	
-	sirky.pocet = Math.floor(Math.random()* 16) + 15;  // nastave
+	sirky.pocet = Math.floor(Math.random()* 8) + 16;  // nastave
 	var hromada = []; // list se sirkama
 	document.getElementById("main").style.display = "none"; 	// vypnuti viditelnosti menu
 	document.getElementById("game").style.display = "block";	 // zapnuti viditelnosti samotne hry
@@ -39,7 +39,7 @@ function novaHra(){
 	
 	// ZACATEK HRY
 	for (i = 0; i < sirky.pocet; i++){  // pridani sirek(obrazku) do promene "hromada"
-		hromada += "<img src='sirka.svg' class='sirka'>";
+		hromada += "<img src='../images/sirka.svg' class='sirka'>";
 	}
 	document.getElementById("hromada").innerHTML = hromada; // zobrazeni vsech sirek ve hre
 }
@@ -51,7 +51,7 @@ function konecTahu(){
 	sirky.pocet -= odebrat; // odebrani sirek hracem
 	hromada = ""; // nulovani listu se sirkami
 	for (i = 0; i < sirky.pocet; i++){  // znovu naplneni hromady bez odectenych sirek
-		hromada += "<img src='sirka.svg' class='sirka'>";
+		hromada += "<img src='../images/sirka.svg' class='sirka'>";
 	}
 	document.getElementById("hromada").innerHTML = hromada; // znovu vsech zbyvajicich sirek
 	
@@ -117,7 +117,7 @@ function tahPocitace(){
 	sirky.pocet -= odebrat; 
 	hromada = "";
 	for (i = 0; i < sirky.pocet; i++){		// pridavani sirek do hromady
-		hromada += "<img src='sirka.svg' class='sirka'>";
+		hromada += "<img src='../images/sirka.svg' class='sirka'>";
 	}
 	// ZPRAVA KOLIK POCITAC ODEBRAL SIREK
 	if (odebrat == 1){
@@ -132,6 +132,7 @@ function tahPocitace(){
 		document.getElementById("hromada").innerHTML = "PROHRÁL/A JSTE";
 		document.getElementById("konectahu").style.display = "none";
 		document.getElementById("tahpocitace").style.display = "none";
+		document.getElementById("counter").innerHTML = "SIREK CELKEM: 0";
 		return;
 	}
 

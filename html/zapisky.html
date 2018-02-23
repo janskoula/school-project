@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href= "../css/style.css" type="text/css">
+		<title>JS zapisky</title>
+	</head>
+	<body>
+		<div id="container">
+			<ul class="topbar">
+				<!--<li><img src="javascript.svg" /></li>-->
+				<li><a href="index.html" class="tpbar">Domů</a></li>
+				<li><a href="zapisky.html" class="tpbar aktivni">Zápisky</a></li>
+				<li><a href="kody.html" class="tpbar">Kódy</a></li>
+				<li><a href="#" class="tpbar">Kontakt</a></li>
+				<li><a href="#" class="tpbar">Zdroje</a></li>
+			</ul>
+			<div id="body">
+				<div class="sidebar">
+					<div class="hsidebar">Seznam zápisků</div>
+					<ul class="polozky">
+						<li><a href="zapisky.html" class="sdbar aktivni">metoda <em>getElementById()</em></a></li>
+						<li><a href="zapisky-dalsimetody.html" class="sdbar">další metody</a></li>
+					</ul>
+				</div>
+				<div class="main-window">
+					<div class="main" id="main">
+						<div class="header">metoda <em>getElementById()</em></div>
+						<br>
+						<p>
+							Jednou ze spousty JavaScript HTML metod je getElementById(id).<br>
+							Příklad:	document.getElementById("pokus").innerHTML = "Hello World!"<br>
+						</p>
+						<p style="margin-left: 3em;">
+							- abychom mohli mít přístup k HTML elementu použijeme metodu "document.getElementById(id)"<br>
+							- atributem id říkáme JavaScriptu, že bude pracovat s tagem, který má toto id (v našem případě "pokus")<br>
+							- vlastnost: "innerHTML" definuje obsah, který se vypíše do elementu<br>
+						</p>
+						<p>
+							&lt;p id=”pokus”>&lt;/p&gt; - jak vidíte tento tag v sobě nená žádný text, ale když spustíte stránku JavaScript do tohoto tagu vypíše "Hello World!"
+						</p>
+						<p>
+							Aby JavaScript mohl vůbec něco na vaší stránce něco dělat musíte ho připojit k HTML kódu.
+							JavaScript můžete připojit dvěmi možnostmi. Buď JavaScript napíšete přímo v HTML kódu mezi tegy  "&lt;script&gt; &lt;/script&gt;" nebo ho
+							můžete připojit v externím souboru.
+						</p>
+						
+						<p>
+							<strong>celý kód s JavaScriptem v HTML kódu:</strong> <br>
+							<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;JavaScript přímo v HTML kódu&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p id=”pokus”>&lt;/p&gt;
+			
+		&lt;script&gt;
+			document.getElementById(“pokus”).innerHTML = “Hello World”;
+		&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;				
+						</pre>
+						</p>
+						<div class="pozor">! Upozornění: každý příkaz(řádek) v JavaScriptu zakončujte středníkem ";". Tím JavaScript pozná, že příkaz je kompletní a posune se na další řádek. Pokud nenapíšete na konci středník, tak se prohlížeč pokusí vložit řádek sám. Praxí osvědčeným postupem však je, že byste neměli dávat prhlížeči jakoukoliv záminku k tomu, abz si musel něco domýšlet.</div>
+						<p>
+							<strong>celý kód s externím JavaScript kódem:</strong>
+						<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;JavaScript v externím souboru&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p id=”pokus”&gt;&lt;/p&gt;
+			
+		&lt;script src=”externiJavaScript.js”&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+						</pre>
+					</p>
+					<p style="margin-left: 3em;">
+						- v tomto případě musíme mít ve složce kde máte uložený HTML kód i soubor s JavaScript kódem <br>
+						- pokud máte JavaScript kód někde jinde musíte k němu specifikovat cestu - například: "/js_kody/externiJavaScript.js"  - tento JavaScript kód se nachází ve složce js_kody, která se nachází ve složce s HTML kódem<br>
+						- dále tento soubor musí mít koncovku .js což je označení JavaScript souboru <br>	
+					</p>
+					<p>
+						kód v souboru “externiJavaScript.js”:
+						<pre>
+document.getElementById(“pokus”).innerHTML = “Hello World”;
+						</pre>
+					</p>
+					<p>
+						<strong>výhodou přidáváním JavaScriptu externě je:</strong>
+						<p style="margin-left: 3em;">
+							- jednodušší znovupoužití na jiné stránce <br>
+							- HTML kód je přehlednější <br>
+						</p>
+					</p>
+					</div>
+				</div>
+				<div class="wipe"></div>
+			</div>
+			<footer>&copy; 2018 | Jan Škoula</footer>
+		</div>
+	</body>
+</html>

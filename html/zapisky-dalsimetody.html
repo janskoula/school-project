@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href= "../css/style.css" type="text/css">
+		<title>Moje portfolio</title>
+	</head>
+	<body>
+		<div id="container">
+			<ul class="topbar">
+				<!--<li><img src="javascript.svg" /></li>-->
+				<li><a href="index.html" class="tpbar">Domů</a></li>
+				<li><a href="zapisky.html" class="tpbar aktivni">Zápisky</a></li>
+				<li><a href="kody.html" class="tpbar">Kódy</a></li>
+				<li><a href="#" class="tpbar">Kontakt</a></li>
+				<li><a href="#" class="tpbar">Zdroje</a></li>
+			</ul>
+			<div id="body">
+				<div class="sidebar">
+					<div class="hsidebar">Seznam zápisků</div>
+					<ul class="polozky">
+						<li><a href="zapisky.html" class="sdbar">metoda <em>getElementById()</em></a></li>
+						<li><a href="zapisky-dalsimetody.html" class="sdbar aktivni">další metody</a></li>
+					</ul>
+				</div>
+				<div class="main-window">
+					<div class="main" id="main">
+						<div class="header">Další metody pro zobrazení dat</div>
+						<br>
+						<p>Data můžeme v JavaScriptu zobrazovat několika způsoby. Jeden už umíme a to <em>.innerHTML</em>.</p>
+						<p><strong>způsoby zobrazení dat:</strong></p>
+						<ul>
+							<li>innerHTML - vypíše data do nějakého HTML elementu</li>
+							<li>document.write() - vypíše data do HTML výstupu</li>
+							<li>window.alert() - vypíše data do alert boxu</li>
+							<li>console.log() - vypíše data do konzole prohlížeče</li>
+						</ul><br>
+						<p>Metoda <em>document.write()</em></p>
+						<p>Tato metoda je vhodná pro testování. Pokud použijeme metodu <em>document.write()</em>, až po tom co se načte HTML dokument, tak se celý HTML kód vymaže a zobrazí se pouze výstup metody <em>document.write()</em>.</p>
+					</div>
+				</div>
+			</div>
+			<footer>&copy; 2018 | Jan Škoula</footer>
+		</div>
+	</body>
+</html>

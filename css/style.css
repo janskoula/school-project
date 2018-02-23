@@ -1,24 +1,35 @@
 ﻿html, body{
-	height: 100%;
 	margin: 0 auto;
 	padding: 0;
 	font-family:'Roboto', sans-serif;
+	background-color: #E9E9E9;
+	display: block;
 	max-width: 1920px;
-	min-width: 1200px;
-	background-color: #f9f9f9;
+	min-width: 1400px;
+	height: 100%;
+	line-height: 21px;
 }
 
 a{
 	text-decoration: none;
 }
+#container{
+	min-height: 100%;
+	position: relative;
+}
 
+#body{
+	padding: 10px;
+	padding-bottom: 56px;
+}
 .topbar{
 	list-style-type: none;
 	margin: 0 auto;
 	padding: 0;
 	background-color:  #555555;
-	width: 100%;
+	max-width: 1920px;
 	position: static;
+	display: block;
 	overflow: auto;
 	z-index: 1;
 	box-shadow: 0 8px 6px -5px rgba(68, 68, 68, 0.5);
@@ -31,19 +42,20 @@ a{
 	position: static;
 	box-shadow: 0 8px 6px -5px rgba(68, 68, 68, 0.5);
 }
-
+#main{
+	margin-bottom: 40px;
+}
 footer{
+	bottom: 0;
+	height: 16px;
 	max-width: 1920px;
-	bottom: 0px;
-	position: fixed;
+	position: absolute;
 	color: white;
 	text-align: center;
 	background-color: #555555;
-	margin: 0 auto;
 	padding: 3px 0px;
 	font-size: 12px;
 	width: 100%;
-	overflow: hidden;
 }
 a.tpbar{
 	width: 80px;
@@ -58,25 +70,33 @@ ul li a{
 	text-decoration: none;
 	background-color: #555555;
 }
-a:hover {
+a:not(.backarrow):hover {
 	background-color: #333;
+}
+
+.sidebar{
+	float: left;
+	position: relative;
+	margin-top: 20px;
+	max-width: 224px;
+	margin-right: 10px;
 }
 
 .hsidebar{
 	width: 224px;
+	height: 50px;
 	margin: 0;
-	padding: 14px 16px 10px 16px;
 	font-size: 20px;
 }
-.sidebar{
-	float:left;
+.polozky{
 	padding: 0;
 	margin: 0;
 	margin-right: 50px;
 	width: 224px;
+	height: 100%;
 	list-style-type: none;
 	background: #55a9cc;
-	 box-shadow: 2px 2px 6px rgba(68, 68, 68, 0.6);
+	box-shadow: 2px 2px 6px rgba(68, 68, 68, 0.6);
 }
 a.sdbar{
 	display: block;
@@ -94,21 +114,25 @@ a.sdbar{
 	margin-bottom: 60px;
 	position: static;
 	top: 100px;
-	width: 850px;
+	max-width: 850px;
 	min-height: 500px;
 	border-radius: 40px;
 	background-color: white;
 	box-shadow: 2px 2px 5px #333;
-	overflow: auto;
 }
 
+.main-window{
+	top: 100px;
+	margin-left: 260px;
+	min-height: 500px;
+}
 .main-kod{
 	padding: 20px;
 	margin: 0px auto;
 	position: static;
 	top: 100px;
 	width: 850px;
-	max-height: 800px;
+	min-height: 300px;
 	background-color: white;
 	box-shadow: 2px 2px 5px #333;
 	overflow: auto;
@@ -118,35 +142,68 @@ a.sdbar{
 }
 
 .header{
+	width: 100%;
 	text-align: center;
 	font-size: 30px;
-	margin: 20px auto;
-	padding: 10px 30px;	
-}
-
-.polozka{
-	width: 850px;
-	padding: 25px;
-	margin: 0px auto;
-	background: #555;
+	margin: 10px auto;
+	padding: 10px 0px;	
 }
 
 .kod{
-	text-decoration: none;
+	padding: 25px;
 	color: white;
+	background-color: #555;
+	width: 800px;
+	margin: 50px auto 0px auto;
 }
 
+.priklad{
+	margin-bottom: 50px;
+	width: 481px;
+	height: 254px;
+	margin: 0 auto;
+	position: relative;
+}
+.kod:hover{
+	background-color: #333;
+}
 .popis{
 	font-size: 14px;
 }
 
+.arrow{
+	stroke: #333333;
+	fill: #333333;
+	float: left;
+	margin: 10px 40px 0px 50px;
+}
+
+.arrow:hover{
+	stroke: #3882a0;
+	fill: #3882a0;
+}
+
 .vyzkouset{
+	padding: 8px;
 	text-align: center;
 	color: white;
-	margin: 10px auto;
-	margin-bottom: 60px;
-	padding: 8px;
-	width: 110px;
 	background-color:#3882a0;
 	font-size: 18px;
+}
+
+.vyzdiv{
+	margin: 15px auto;
+	margin-bottom: 60px;
+	position: static;
+	width: 110px;
+}
+
+.pozor{
+	box-shadow: 2px 2px 5px #333;
+	border-radius: 20px;
+	padding: 15px;
+	margin: 20px auto;
+	max-width:650px;
+	background-color: #3882a0;
+	color: white;
 }
